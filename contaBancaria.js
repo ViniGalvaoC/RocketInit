@@ -59,7 +59,10 @@ class ContaUniversitaria extends ContaBancaria{
     sacar(valor){
         if(valor >500){
             return console.log("saque maximo de R$500,00");
-        }else{
+        }else if(valor>this._saldo){
+            return console.log("Valor solicitado maior que o saldo");
+        }
+        else{
             this._saldo = this._saldo - valor;
             return this._saldo;
         }
